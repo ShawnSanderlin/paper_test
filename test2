@@ -1,0 +1,61 @@
+1
+RPM Milestone 1:
+CS7637
+Shawn Sanderlin 
+ssanderlin3@gatech.edu
+1 Abstract
+In this paper, I will propose a computational method for 
+solving the image transformation puzzles known as Raven’s 
+Progressive Matrices test of intelligence, which involves 
+finding the missing image in a sequence of images based on 
+the transformation applied. My approach utilizes a 2D array 
+representation of the images. The percent change between 
+each image is calculated, and the answer with the closest 
+percent change from the respective slides is selected. I will 
+also perform rotations on the images and quadrant analysis 
+to improve the accuracy of our method.
+2
+2 INTRODUCTION
+Image transformation puzzles are a prevalent problem in cognitive psychology, 
+which involve finding the missing image in a sequence of images based on the 
+transformation applied to each image. The human approach to solving these 
+puzzles involves seeing patterns and looking for combinations of changes such 
+as shape transformation, rotation, translation, size, and the number of shapes. 
+However, this approach is time-consuming and may not be accurate.
+3 HUMAN APPROACH
+Humans are good at seeing pa erns even when there aren’t any. So the way that I 
+would break these down would be to look for combinations of types of changes 
+such as shape transformation, rotation, translation, size, and the number of shapes.
+First, we would evaluate change from A-B and look for similar changes in C-#.
+Then compare the change in A-C with B-#. Finally for B-C match A-#.
+3
+4 PROBLEM SELECTION
+For this one, we would see A-B and C are the 
+same and assume # is also.
+For this, A-B has an axis flip and then a shape change 
+from a triangle to a square. Then A-C we see another axis
+flip with the same shape. So for
+#, we can expect a square in the top left 
+corner.
+This one is more difficult if we only use A-B and A-C. In both of those, we see one 
+shape is lost but that lost shape changes in a different direction. But by realizing 
+that A-# also has to follow the same logic we would see 5 makes the most sense.
+4
+5 Agent Approach
+The problem of trying to get a computer to solve these problems as a human would 
+is with tracking shapes and being able to quickly see what the transformations are 
+between slides.
+I instead plan to convert the image into a 2D array of 1s and 0s and check the 
+percent change between the different slides and then look for which answer has 
+the closest present change from the respective slides. I will also perform 
+transformations such as rotating B and C and whichever number of rotations gets 
+the slides closest to A, I will do that number to each of the answers and see which 
+is closest to that percent change. Lastly, I will break each slide into quadrants and 
+look at the change in each quadrant from one slide to the next and try to match 
+that in the answers.
+4 Challenge
+One weakness of this method is its inability to account for overlapping transitions. 
+It will also not be able to determine shape changes. Lastly, although this should be 
+able to solve the problems for the majority of the sets it is not mimicking how a 
+human would approach these problems and not using any predetermined 
+knowledge like shapes.
